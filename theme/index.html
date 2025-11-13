@@ -160,7 +160,7 @@
                                     <div class="product-card__pairs-well-with__card">
                                       <shopify-context type="collection" handle="omen">
                                         <template>
-                                          <shopify-list-context type="product" query="collection.products" first="1">
+                                          <shopify-list-context type="product" query="collection.products" first="1" filters='[{"available": true}]'>
                                             <template>
                                               <div class="product-card__container">
                                                 <div class="product-card__media">
@@ -191,7 +191,7 @@
                                     <div class="product-card__pairs-well-with__card last">
                                       <shopify-context type="collection" handle="omen">
                                         <template>
-                                          <shopify-list-context type="product" query="collection.products" first="2" skip="1">
+                                          <shopify-list-context type="product" query="collection.products" first="1" skip="1" filters='[{"available": true}]'>
                                             <template>
                                               <div class="product-card__container">
                                                 <div class="product-card__media">
