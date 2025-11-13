@@ -156,7 +156,7 @@
                               <div class="product-card__accordion__header" data-toggle="#product2" onclick="toggleAccordion(event);">Pairs well with</div>
                               <div class="product-card__accordion__content" id="product2">
                                 <div class="product-card__pairs-well-with__layout">
-                                  <a class="product-card__pairs-well-with" shopify-attr--disabled="!product.availableForSale" onclick="getElementById('product-modal').showModal(); getElementById('product-modal-context').update(event);">
+                                  <a class="product-card__pairs-well-with" shopify-attr--disabled="!product.selectedOrFirstAvailableVariant.availableForSale" onclick="getElementById('product-modal').showModal(); getElementById('product-modal-context').update(event);">
                                     <div class="product-card__pairs-well-with__card">
                                       <shopify-context type="collection" handle="omen">
                                         <template>
@@ -175,8 +175,9 @@
                                                       <shopify-money query="product.selectedOrFirstAvailableVariant.price"></shopify-money>
                                                     </span>
                                                   </div>
+                                                  <shopify-data query="product.selectedOrFirstAvailableVariant.availableForSale" hidden></shopify-data>
                                                 </div>
-                                                <button class="product-card__add-button" onclick="event.stopPropagation();getElementById('cart').addLine(event).showModal();" shopify-attr--disabled="!product.availableForSale">
+                                                <button class="product-card__add-button" onclick="event.stopPropagation();getElementById('cart').addLine(event).showModal();" shopify-attr--disabled="!product.selectedOrFirstAvailableVariant.availableForSale">
                                                   Quick add
                                                 </button>
                                               </div>
@@ -186,7 +187,7 @@
                                       </shopify-context>
                                     </div>
                                   </a>
-                                  <a class="product-card__pairs-well-with" shopify-attr--disabled="!product.availableForSale" onclick="getElementById('product-modal').showModal(); getElementById('product-modal-context').update(event);">
+                                  <a class="product-card__pairs-well-with" shopify-attr--disabled="!product.selectedOrFirstAvailableVariant.availableForSale" onclick="getElementById('product-modal').showModal(); getElementById('product-modal-context').update(event);">
                                     <div class="product-card__pairs-well-with__card last">
                                       <shopify-context type="collection" handle="omen">
                                         <template>
@@ -205,8 +206,9 @@
                                                       <shopify-money query="product.selectedOrFirstAvailableVariant.price"></shopify-money>
                                                     </span>
                                                   </div>
+                                                  <shopify-data query="product.selectedOrFirstAvailableVariant.availableForSale" hidden></shopify-data>
                                                 </div>
-                                                <button class="product-card__add-button" onclick="event.stopPropagation();getElementById('cart').addLine(event).showModal();" shopify-attr--disabled="!product.availableForSale">
+                                                <button class="product-card__add-button" onclick="event.stopPropagation();getElementById('cart').addLine(event).showModal();" shopify-attr--disabled="!product.selectedOrFirstAvailableVariant.availableForSale">
                                                   Quick add
                                                 </button>
                                               </div>
@@ -228,7 +230,7 @@
               </div>
               <!--  Collection / You may also like section  -->
               <div class="collection-layout">
-                <shopify-context type="collection" handle="game-controllers">
+                <shopify-context type="collection" handle="console-gaming">
                   <template>
                     <div class="collection-container">
                       <div class="collection-title">
@@ -243,9 +245,9 @@
                         <div class="collection-grid" id="collection__product-slider">
                           <shopify-list-context type="product" query="collection.products" first="8">
                             <template>
-                              <button shopify-attr--disabled="!product.availableForSale" class="collection-grid__product" onclick="getElementById('product-modal').showModal(); getElementById('product-modal-context').update(event);">
+                              <button shopify-attr--disabled="!product.selectedOrFirstAvailableVariant.availableForSale" class="collection-grid__product" onclick="getElementById('product-modal').showModal(); getElementById('product-modal-context').update(event);">
                                 <div class="product-card__image-container">
-                                  <a class="product-card__hover-button" onclick="event.stopPropagation();document.querySelector('shopify-cart').addLine(event); document.querySelector('shopify-cart').showModal()">
+                                  <a class="product-card__hover-button" onclick="event.stopPropagation();document.querySelector('shopify-cart').addLine(event); document.querySelector('shopify-cart').showModal()" shopify-attr--disabled="!product.selectedOrFirstAvailableVariant.availableForSale">
                                     <span>Quick add</span>
                                   </a>
                                   <shopify-media width="242" height="242" max-images="1" query="product.selectedOrFirstAvailableVariant.image"></shopify-media>
@@ -257,6 +259,7 @@
                                   <p class="product-card__price">
                                     <shopify-money query="product.selectedOrFirstAvailableVariant.price"></shopify-money>
                                   </p>
+                                  <shopify-data query="product.selectedOrFirstAvailableVariant.availableForSale" hidden></shopify-data>
                                 </div>
                               </button>
                             </template>
@@ -293,7 +296,7 @@
                             </div>
                             <shopify-variant-selector></shopify-variant-selector>
                             <div class="product-modal__buttons">
-                              <button class="product-card__add-button" onclick="getElementById('cart').addLine(event).showModal();getElementById('product-modal').close();" shopify-attr--disabled="!product.availableForSale">
+                              <button class="product-card__add-button" onclick="getElementById('cart').addLine(event).showModal();getElementById('product-modal').close();" shopify-attr--disabled="!product.selectedOrFirstAvailableVariant.availableForSale">
                                 Add to cart
                               </button>
                               <button class="product-card__buy-button" onclick="document.querySelector('shopify-store').buyNow(event)" shopify-attr--disabled="!product.availableForSale">
