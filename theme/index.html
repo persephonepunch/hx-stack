@@ -957,18 +957,25 @@
     border-radius: 0 !important;
   }
   /** variant selector style **/
-  shopify-variant-selector::part(color-swatch-selected),
-  shopify-variant-selector::part(color-swatch) {
-    height: 28px;
-    width: 28px;
-    border-radius: 0.25rem;
+  shopify-variant-selector::part(color-swatch),
+  shopify-variant-selector::part(color-swatch-selected) {
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px !important;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.08);
   }
   shopify-variant-selector::part(color-swatch):hover {
-    border: 1px solid #ccc;
+    box-shadow: 0 0 0 2px rgba(17, 17, 17, 0.16);
   }
-  shopify-variant-selector::part(color-swatch):after {
-    border-radius: 0.25rem;
-    border: 1px solid #31abff;
+  shopify-variant-selector::part(color-swatch-selected) {
+    box-shadow: 0 0 0 2px #111111;
+  }
+  shopify-variant-selector::part(color-swatch-label) {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    text-transform: capitalize;
+    color: #111111;
   }
   shopify-variant-selector::part(radio) {
     background: none;
@@ -1033,9 +1040,9 @@
   /* Re-apply swatch rounding only for variant selector swatches */
   shopify-variant-selector::part(color-swatch),
   shopify-variant-selector::part(color-swatch-selected) {
-    height: 28px;
-    width: 28px;
-    border-radius: 0.25rem !important;
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px !important;
   }
 </style>
               <script>
